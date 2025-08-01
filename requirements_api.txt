@@ -1,0 +1,8 @@
+torch
+torchvision
+timm
+opencv-python-headless
+albumentations
+numpy
+gunicorn  # Рекомендуется для запуска в production
+Pillow # Для работы с изображениями в памяти
