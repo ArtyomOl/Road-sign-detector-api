@@ -1,12 +1,12 @@
 # app.py
 from flask import Flask, request, jsonify
 import torch
+import utils
 from utils import load_trained_model, preprocess_image, get_class_name_by_id
+import config
 
 app = Flask(__name__)
 
-# --- Загрузка модели при старте приложения ---
-# Модель загружается ОДИН РАЗ, а не при каждом запросе. Это критически важно для производительности.
 model = load_trained_model()
 
 @app.route("/")
@@ -40,10 +40,20 @@ def predict():
                 class_id = predicted_idx.item()
             
             # 6. Формирование и отправка ответа
-            return jsonify({"class_id": class_id, 'class_name': get_class_name_by_id(class_id)})
+            return jsonify({"class_id": class_id, 'class_name': get_class_name_by_id(class_id, 'en')})
 
         except Exception as e:
             return jsonify({"error": f"An error occurred: {e}"}), 500
+
+@app.route('/classes_info', methods=['GET'])
+def get_classes_info():
+     #lang = request.args['language'] or 'eng'
+     lang = 'en'
+     if lang not in config.SUPPORTED_LANGUAGES:
+         return jsonify({'Message': f'Language {lang} not supported'}), 400
+     classes_info = utils.get_classes_names(lang)
+     return jsonify(classes_info)
+
 
 if __name__ == "__main__":
     # Запуск для разработки. Для production используйте Gunicorn.

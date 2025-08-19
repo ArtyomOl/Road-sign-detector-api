@@ -1,44 +1,44 @@
-class,name
-0,speed_limit_20
-1,speed_limit_30
-2,speed_limit_50
-3,speed_limit_60
-4,speed_limit_70
-5,speed_limit_80
-6,speed_limit_80_cancel
-7,speed_limit_100
-8,speed_limit_120
-9,no_overtraking
-10,no_overtraking_truck
-11,crossroad_ahead
-12,priority_road
-13,give_way
-14,stop
-15,no_traffic
-16,no_truck
-17,no_entry
-18,danger
-19,bend_to_right
-20,bend_to_left
-21,double_bend
-22,uneven_road
-23,slippery_road
-24,narrow_right
-25,road_work
-26,traffic_signal_ahead
-27,pedestrian_crossing_ahead
-28,children_ahead
-29,cycle_zone
-30,ice_danger
-31,wild_animals
-32,national_speed_limit
-33,turn_right
-34,turn_left
-35,ahead_only
-36,ahead_and_right
-37,ahead_and_left
-38,keep_right
-39,keep_left
-40,circular_motion
-41,no_overtraking_cancel
-42,no_overtraking_truck_cancel
+class,en,rus
+0,speed_limit_20,ограничение скорости 20
+1,speed_limit_30,ограничение скорости 30
+2,speed_limit_50,ограничение скорости 50
+3,speed_limit_60,ограничение скорости 60
+4,speed_limit_70,ограничение скорости 70
+5,speed_limit_80,ограничение скорости 80
+6,speed_limit_80_cancel,отмена ограничения скорости 80
+7,speed_limit_100,ограничение скорости 100
+8,speed_limit_120,ограничение скорости 120
+9,no_overtraking,обгон запрещен
+10,no_overtraking_truck,грузовым авто обгон запрещен
+11,crossroad_ahead,впереди перекрестная дорога
+12,priority_road,главная дорога
+13,give_way,уступи дорогу
+14,stop,стоп
+15,no_traffic,движение запрещено
+16,no_truck,движение грузовых авто запрещено
+17,no_entry,проезд запрещен
+18,danger,осторожно
+19,bend_to_right,крутой поворот налево
+20,bend_to_left,крутой поворот направо
+21,double_bend,крутые повороты
+22,uneven_road,неровная дорога
+23,slippery_road,скользкая дорога
+24,narrow_right,сужение справа
+25,road_work,дорожные работы
+26,traffic_signal_ahead,впереди светофор
+27,pedestrian_crossing_ahead,впереди пешеходный переход
+28,children_ahead,дети на дороге
+29,cycle_zone,движение велосипедов
+30,ice_danger,гололед
+31,wild_animals,дикие животные
+32,national_speed_limit,национальное ограничение скорости
+33,turn_right,поворот направо
+34,turn_left,поворот налево
+35,ahead_only,движение вперед
+36,ahead_and_right,движение вперед/направо
+37,ahead_and_left,движение вперед/налево
+38,keep_right,придерживайтесь правой стороны
+39,keep_left,придерживайьесь левой стороны
+40,circular_motion,круговое движение
+41,no_overtraking_cancel,обгон разрешен
+42,no_overtraking_truck_cancel,грузовым авто обгон разрешен

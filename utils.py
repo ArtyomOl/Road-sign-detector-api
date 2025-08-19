@@ -9,9 +9,7 @@ from albumentations.pytorch import ToTensorV2
 import timm
 from typing import Tuple
 
-# --- КОНФИГУРАЦИЯ ---
-# Эти параметры должны СОВПАДАТЬ с параметрами из проекта обучения!
-MODEL_NAME = "resnet50"  # Укажите модель, которую вы обучали (e.g., resnet50)
+MODEL_NAME = "resnet50"
 NUM_CLASSES = 43
 IMAGE_SIZE = (64, 64)
 MODEL_PATH = "models/best_model.pth"
@@ -65,9 +63,20 @@ def preprocess_image(image_bytes: bytes) -> torch.Tensor:
     
     return input_tensor
 
-def get_class_name_by_id(class_id: int) -> str:
+def get_class_name_by_id(class_id: int, lang: str) -> str:
     '''
     Возвращает имя класса по его id
     '''
     class_names = pd.read_csv('class_names.csv')
-    return class_names.loc[class_names['class'] == class_id, 'name'].values[0]
+    return class_names.loc[class_names['class'] == class_id, lang].values[0]
+
+def get_classes_names(language: str) -> dict:
+    '''
+    Возвращает словарь соответствий номера и имени доступных классов
+    '''
+    class_names = pd.read_csv('class_names.csv')
+    return class_names[language].to_dict()
+
+
+if __name__ == '__main__':
+    print(get_classes_names('rus'))

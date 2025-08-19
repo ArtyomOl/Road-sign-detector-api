@@ -1,10 +1,3 @@
-# Road-sign-detector-api
-API for Road sign detector AI model
-
-This is API for AI model from my other project: https://github.com/ArtyomOl/Road-sign-detector
-
-Handlers:
-```yaml
 /predict:
     request:
      - language:
@@ -12,10 +5,14 @@ Handlers:
         required: false
         default: 'en'
     response:
+      200: "#components/schemas/PredictResponse"
+
+components:
+  schemas:
+    PredictResponse:
      - class_id:
         description: 'class id'
         required: true
      - class_name:
         description: 'class name in a request language'
         required: true
-```
